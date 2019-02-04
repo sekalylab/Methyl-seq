@@ -1,0 +1,37 @@
+The C++ program calculates CpG site methylation across the entire genome based on a pileup file
+compiling:
+g++ methyl-seq-level.C
+
+usage:
+methyl-seq-level hg19/hg19.CpG.sites.list out2  /scratch/users/lxm416/RAROproject_Methylome/583266_1-TN/583266_1-TN.1million.pileup TN 20
+
+The file lists CpG site position across the entire genome
+$ head hg19/hg19.CpG.sites.list
+chr	pos	base
+chr10	60025	CG
+chr10	60089	CG
+chr10	60109	CG
+
+out2 is an output file name. It lists methylation for every CpG site across the entire genome.  
+TN
+0.5
+NA (not available)
+0.95
+0.95
+.9
+0.8
+0
+1.1
+
+
+The pileup file:
+chr1	9999	N	1	^~c	?
+chr1	10000	N	9	c^~C^~C^~A^~A^~A^~A^~A^~A	8C>>&!>5!
+chr1	10001	t	11	,.......C^~.^~.	1C?>&!<5!%/
+chr1	10002	a	16	,...GT..G..^~T^~T^~.^~G^~.	?CCC&!?5!%/!!!$B
+chr1	10003	a	17	,........TCTTG..^~.	9FFF0%D6+%/!!!0C!
+chr1	10004	c	19	,......G.....T..A^~,^~,	DFFF=CD37=899!@C!A?
+ 
+ "TN" is a description for the sample name
+
+20 coverage depth threshold. 
